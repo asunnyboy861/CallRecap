@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallRecap — AI Call Recording & Transcription</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif; background: #000; color: #fff; overflow-x: hidden; }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; background: linear-gradient(180deg, #0a0a2e 0%, #1a1a3e 50%, #0d0d2a 100%); }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; background: linear-gradient(135deg, #5e9eff, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.25rem; color: rgba(255,255,255,0.7); max-width: 500px; line-height: 1.6; margin-bottom: 40px; }
+        .app-store-btn { display: inline-block; background: #fff; color: #000; padding: 14px 32px; border-radius: 12px; text-decoration: none; font-size: 1.1rem; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+        .app-store-btn:hover { transform: scale(1.05); box-shadow: 0 8px 30px rgba(94,158,255,0.3); }
+        .features { padding: 80px 20px; background: #0d0d2a; }
+        .features h2 { text-align: center; font-size: 2rem; margin-bottom: 60px; color: #fff; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; max-width: 960px; margin: 0 auto; }
+        .feature { text-align: center; padding: 30px; }
+        .feature .icon { font-size: 3rem; margin-bottom: 20px; }
+        .feature h3 { font-size: 1.3rem; margin-bottom: 12px; color: #5e9eff; }
+        .feature p { color: rgba(255,255,255,0.6); line-height: 1.6; }
+        .pricing { padding: 80px 20px; background: linear-gradient(180deg, #0d0d2a, #1a1a3e); text-align: center; }
+        .pricing h2 { font-size: 2rem; margin-bottom: 40px; }
+        .pricing-cards { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; max-width: 800px; margin: 0 auto; }
+        .pricing-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px 24px; min-width: 220px; }
+        .pricing-card.popular { border-color: #5e9eff; background: rgba(94,158,255,0.1); }
+        .pricing-card h3 { font-size: 1.1rem; margin-bottom: 8px; color: rgba(255,255,255,0.7); }
+        .pricing-card .price { font-size: 2.5rem; font-weight: 700; margin-bottom: 4px; }
+        .pricing-card .period { color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+        footer { padding: 40px 20px; text-align: center; background: #000; border-top: 1px solid rgba(255,255,255,0.1); }
+        footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 16px; font-size: 0.9rem; }
+        footer a:hover { color: #5e9eff; }
+        footer p { color: rgba(255,255,255,0.3); margin-top: 20px; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>CallRecap</h1>
+        <p>Never miss a word. AI-powered call recording, transcription, and summarization — all on your device.</p>
+        <a href="https://apps.apple.com/us/app/id[APP_STORE_ID]" class="app-store-btn" id="downloadBtn">Coming Soon to the App Store</a>
+    </section>
+
+    <section class="features">
+        <h2>Why CallRecap?</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="icon">🎙️</div>
+                <h3>On-Device Transcription</h3>
+                <p>Whisper.ai processes your recordings locally — no cloud, no privacy concerns. Your conversations stay on your phone.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🧠</div>
+                <h3>AI Summaries & Action Items</h3>
+                <p>Get instant call summaries with key points and action items. Add reminders directly to Apple Reminders.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🔒</div>
+                <h3>Privacy First</h3>
+                <p>Face ID lock, on-device processing, and iCloud sync with end-to-end encryption. Your data never leaves your control.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <h2>Simple Pricing</h2>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Monthly</h3>
+                <div class="price">$3.99</div>
+                <div class="period">per month</div>
+            </div>
+            <div class="pricing-card popular">
+                <h3>Yearly</h3>
+                <div class="price">$29.99</div>
+                <div class="period">per year · 7-day free trial</div>
+            </div>
+            <div class="pricing-card">
+                <h3>Lifetime</h3>
+                <div class="price">$79.99</div>
+                <div class="period">one-time purchase</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <p>&copy; 2026 CallRecap. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const appId = '[APP_STORE_ID]';
+        const btn = document.getElementById('downloadBtn');
+        if (appId && appId !== '[APP_STORE_ID]' && !isNaN(appId)) {
+            btn.href = 'https://apps.apple.com/us/app/id' + appId;
+            btn.textContent = 'Download on the App Store';
+        }
+    </script>
+</body>
+</html>
